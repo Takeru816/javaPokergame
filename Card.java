@@ -1,6 +1,6 @@
-package kouka3.poker2;
+package poker2;
 
-public class Card {
+public class Card implements Comparable<Card>{
     private int number;
     private String symbol;
 
@@ -9,15 +9,27 @@ public class Card {
         this.symbol = symbol;
     }
 
-    public int getNumber() {
+    int getNumber() {
         return number;
     }
 
-    public String getSymbol() {
+    String getSymbol() {
         return symbol;
     }
 
-    public void showCard() {
-        System.out.println("数字 = " + getNumber() + "," + "シンボル = " + getSymbol());
+    @Override
+    public String toString() {
+        return "数字 = " + this.number + ", " + "マーク = " + this.symbol;
+    }
+
+    @Override
+    public int compareTo(Card o) {
+        // まずは数字を比較する
+        int numberComparison = Integer.compare(number, o.number);
+        if (numberComparison != 0) {
+            return numberComparison;
+        }
+        // 数字が同じ場合はスートを比較する
+        return symbol.compareTo(o.symbol);
     }
 }
