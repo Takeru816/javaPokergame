@@ -22,6 +22,7 @@ public class Card implements Comparable<Card>{
         return "数字 = " + this.number + ", " + "マーク = " + this.symbol;
     }
 
+    // Cardインスタンスをソートできるようにする
     @Override
     public int compareTo(Card o) {
         // まずは数字を比較する
@@ -29,7 +30,7 @@ public class Card implements Comparable<Card>{
         if (numberComparison != 0) {
             return numberComparison;
         }
-        // 数字が同じ場合はスートを比較する
+        // 数字が同じ場合はマークを比較する
         return symbol.compareTo(o.symbol);
     }
 }

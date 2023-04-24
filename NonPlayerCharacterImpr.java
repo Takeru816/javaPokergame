@@ -15,6 +15,7 @@ public class NonPlayerCharacterImpr extends AbstractPokerPlayer {
         this.name = "npc_" + npcNum;
     }
 
+    // 3カード 2ペア 1ペア ノーハンドの時のみ手札を変える
     @Override
     public void changeHand(Deck deck) {
         switch (this.hand) {

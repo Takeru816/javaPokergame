@@ -3,9 +3,9 @@ package poker2;
 import java.util.Arrays;
 
 public abstract class AbstractPokerPlayer implements InterfacePokerPlayer {
-    protected String name;
-    protected Card[] handList = new Card[5];
-    protected String hand;
+    protected String name;								// プレイヤー名
+    protected Card[] handList = new Card[5];			// 手札
+    protected String hand;								// 手札の役
 
     public AbstractPokerPlayer(Deck deck) {
         setHand(deck);
@@ -33,6 +33,7 @@ public abstract class AbstractPokerPlayer implements InterfacePokerPlayer {
         Arrays.sort(this.handList);
     }
 
+	// 役の判定
     protected void judgeHand() {
         sortHand();
 
@@ -78,7 +79,7 @@ public abstract class AbstractPokerPlayer implements InterfacePokerPlayer {
 				}
 			}
 		}
-		// 最終手札チェック
+
 		if (straight_flag && flash_flag) {
 			if (handList[0].getNumber() == 1 && handList[4].getNumber() == 13) {
 				hand = "ロイヤルストレートフラッシュ";

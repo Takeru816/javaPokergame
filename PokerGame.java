@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class PokerGame {
 
+    // ポーカーゲームの進行をするメソッド
     public void game() {
 
         Scanner stdIn = new Scanner(System.in);

@@ -5,9 +5,9 @@ import java.util.Collections;
 
 
 public class Deck {
-    // フィールド
+
     private ArrayList<Card> deck_list;
-    // コンストラクタ
+
     public Deck() {
         setDeck();
     }
@@ -30,9 +30,5 @@ public class Deck {
 
     private void shuffleDeck() {
         Collections.shuffle(this.deck_list);
-    }
-
-    public void sortDeck() {
-        Collections.sort(this.deck_list);
     }
 }
